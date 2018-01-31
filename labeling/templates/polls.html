@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>polls</title>
+</head>
+<body>
+{% if issue %}
+    <ul>
+        <li><a href= {{issue.url}}>{{ issue.url }}</a> : {{ issue.issue_or_comment }} {{ issue.id }}</li>
+        <h1></h1>
+        {{ issue.issue_text|linebreaks }}
+        <h1></h1>
+        <form action="/labeling/polls/vote/?issue_id={{issue.id}}" method="post" style="font-weight: bold">
+            {% csrf_token %}
+            <label><input type="radio" name="choice" id="1" value="Positive" onclick="this.form.submit()">Positive</label>
+            <label><input type="radio" name="choice" id="2" value="Neutral" onclick="this.form.submit()">Neutral</label>
+            <label><input type="radio" name="choice" id="3" value="Negative" onclick="this.form.submit()">Negative</label>
+            <!--<input type="submit" value="submit" />-->
+        </form>
+    </ul>
+{% else %}
+    <p>Congratulations and THANKS!!!!.</p>
+{% endif %}
+</body>
+</html>
