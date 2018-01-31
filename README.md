@@ -7,5 +7,5 @@ Then `http://127.0.0.1:8000/admin/` could be used to manage users,
 
 and `http://127.0.0.1:8000/labeling` is where one should start annotating.
 
-The texts waiting to be labeled should be imported into Table labeling.issuetext, and the annotators information should be saved 
+The texts waiting to be labeled should be imported into Table labeling.issuetext, and the annotators' information should be saved 
 into Table labeling.users.
